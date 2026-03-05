@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import WhoIsWatching from './pages/WhoIsWatching';
 import AboutMe from './pages/AboutMe';
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
