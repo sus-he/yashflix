@@ -187,3 +187,66 @@ body {
 .modal-enter {
   animation: modalIn 0.25s ease-out;
 }
+
+/* ============ Netflix Intro / Loading Screen ============ */
+@keyframes introLogoZoom {
+  0% {
+    opacity: 0;
+    transform: scale(2.5);
+    filter: brightness(3);
+    letter-spacing: 0.8em;
+  }
+
+  30% {
+    opacity: 1;
+    filter: brightness(2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+    letter-spacing: 0.35em;
+  }
+}
+
+.intro-logo-hidden {
+  opacity: 0;
+  transform: scale(2.5);
+  font-size: 56px;
+}
+
+.intro-logo-visible {
+  animation: introLogoZoom 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-size: 56px;
+}
+
+@media (min-width: 768px) {
+
+  .intro-logo-hidden,
+  .intro-logo-visible {
+    font-size: 80px;
+  }
+}
+
+@keyframes barFlash {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+.intro-bar-flash {
+  animation: barFlash 1s ease-in-out 1s forwards;
+  transform-origin: center;
+}
