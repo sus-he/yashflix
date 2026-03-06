@@ -37,6 +37,9 @@ export default function Navbar() {
                     >
                         YASHFLIX
                     </span>
+                    <span className="hidden md:inline text-[10px] text-[#555] tracking-[0.2em] uppercase font-light ml-3">
+                        Every project tells a story
+                    </span>
 
                     <div className="hidden md:flex items-center gap-5">
                         {links.map((l) => (
@@ -44,8 +47,8 @@ export default function Navbar() {
                                 key={l.path}
                                 onClick={() => navigate(l.path)}
                                 className={`text-[13px] transition-colors duration-200 ${location.pathname === l.path
-                                        ? 'text-white font-semibold'
-                                        : 'text-[#b3b3b3] hover:text-[#e5e5e5]'
+                                    ? 'text-white font-semibold'
+                                    : 'text-[#b3b3b3] hover:text-[#e5e5e5]'
                                     }`}
                             >
                                 {l.label}

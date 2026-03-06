@@ -188,45 +188,94 @@ body {
   animation: modalIn 0.25s ease-out;
 }
 
-/* ============ Netflix Intro / Loading Screen ============ */
-@keyframes introLogoZoom {
+/* ============ Netflix Intro / Y Ribbon Animation ============ */
+.intro-y-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-y-svg {
+  width: 120px;
+  height: 150px;
+  filter: drop-shadow(0 0 40px rgba(229, 9, 20, 0.4));
+}
+
+@media (min-width: 768px) {
+  .intro-y-svg {
+    width: 180px;
+    height: 225px;
+  }
+}
+
+.intro-y-hidden {
+  opacity: 0;
+  transform: scale(3) perspective(800px) rotateY(30deg);
+}
+
+.intro-y-visible {
+  animation: yRibbonReveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes yRibbonReveal {
   0% {
     opacity: 0;
-    transform: scale(2.5);
+    transform: scale(3) perspective(800px) rotateY(30deg);
     filter: brightness(3);
-    letter-spacing: 0.8em;
   }
 
-  30% {
+  25% {
     opacity: 1;
     filter: brightness(2);
   }
 
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) perspective(800px) rotateY(0deg);
     filter: brightness(1);
-    letter-spacing: 0.35em;
   }
 }
 
-.intro-logo-hidden {
+/* Staggered ribbon pieces */
+.intro-ribbon {
   opacity: 0;
-  transform: scale(2.5);
-  font-size: 56px;
+  animation: ribbonSlide 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.intro-logo-visible {
-  animation: introLogoZoom 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  font-size: 56px;
+.intro-ribbon-left {
+  animation-delay: 0.3s;
+  transform-origin: top left;
 }
 
-@media (min-width: 768px) {
+.intro-ribbon-right {
+  animation-delay: 0.5s;
+  transform-origin: top right;
+}
 
-  .intro-logo-hidden,
-  .intro-logo-visible {
-    font-size: 80px;
+.intro-ribbon-stem {
+  animation-delay: 0.7s;
+  transform-origin: top center;
+}
+
+@keyframes ribbonSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scaleY(0.3);
   }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* Tagline text */
+.intro-tagline {
+  font-family: 'Inter', sans-serif;
 }
 
 @keyframes barFlash {
@@ -247,6 +296,6 @@ body {
 }
 
 .intro-bar-flash {
-  animation: barFlash 1s ease-in-out 1s forwards;
+  animation: barFlash 1s ease-in-out 0.8s forwards;
   transform-origin: center;
 }

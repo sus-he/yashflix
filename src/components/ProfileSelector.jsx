@@ -50,11 +50,17 @@ export default function ProfileSelector() {
         <div className="min-h-screen bg-[#141414] flex flex-col items-center justify-center px-6 select-none">
             {/* YASHFLIX logo */}
             <h1
-                className="font-netflix text-[#e50914] text-[40px] md:text-[56px] tracking-[6px] mb-6 profile-appear"
+                className="font-netflix text-[#e50914] text-[40px] md:text-[56px] tracking-[6px] mb-2 profile-appear"
                 style={{ animationDelay: '0.1s' }}
             >
                 YASHFLIX
             </h1>
+            <p
+                className="text-[#666] text-[10px] md:text-[12px] tracking-[0.3em] uppercase mb-6 profile-appear font-light"
+                style={{ animationDelay: '0.15s' }}
+            >
+                Every project tells a story
+            </p>
 
             {/* Who's watching? */}
             <p

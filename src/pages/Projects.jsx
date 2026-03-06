@@ -81,6 +81,7 @@ export default function Projects() {
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                     <div>
                         <span className="font-netflix text-[#e50914] text-[20px] tracking-wider">YASHFLIX</span>
+                        <span className="text-[10px] text-[#555] tracking-[0.15em] uppercase font-light ml-2">Every project tells a story</span>
                         <p className="text-[12px] text-[#555] mt-1">
                             {profileInfo.name} · IIT Kharagpur &apos;25
                         </p>
